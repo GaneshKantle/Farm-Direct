@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page - Contract Farming</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 24px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .payment-container {
+            background-color: #fafafa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="text"], input[type="number"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .payment-method {
+            flex: 1;
+            background-color: #e9f5e9;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .payment-method:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .payment-method img {
+            max-width: 80px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+button a{
+    color: white;
+    text-decoration: none;
+    }
+        button :hover {
+            background-color: #45a049;
+        }
+
+        /* Agricultural Theme */
+        .agri-theme {
+            background-color: #f0f9f0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .agri-theme img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .payment-summary {
+            background-color: #e0f7e0;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+            padding: 10px 0;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Secure Payment - Contract Farming Platform
+</header>
+
+<main>
+    <!-- Agriculture Vibes Section -->
+
+    <!-- Payment Summary -->
+    <div class="payment-summary">
+        <h2>Payment Summary</h2>
+        <p><strong>Buyer:</strong> Ganesha</p>
+        <p><strong>Crop:</strong> Wheat (100kg)</p>
+        <p><strong>Total Amount:</strong> 5560/-</p>
+    </div>
+
+    <!-- Payment Form -->
+    <div class="payment-container">
+        
+        <h2>Make a Payment</h2>
+
+        <label for="buyer-name">Buyer Name</label>
+        <input type="text" id="buyer-name" placeholder="Enter your name">
+
+        <label for="buyer-email">Buyer Email</label>
+        <input type="email" id="buyer-email" placeholder="Enter your email">
+
+        <label for="amount">Amount to Pay</label>
+        <input type="number" id="amount" value="200" readonly>
+
+        <!-- Payment Methods -->
+        <h3>Select Payment Method</h3>
+        <div class="payment-methods">
+            <div class="payment-method">
+                <img src="https://via.placeholder.com/80?text=Credit+Card" alt="Credit Card">
+                <p>Credit/Debit Card</p>
+            </div>
+            <div class="payment-method">
+                <img src="https://via.placeholder.com/80?text=PayPal" alt="PayPal">
+                <p>PayPal</p>
+            </div>
+            <div class="payment-method">
+                <img src="https://via.placeholder.com/80?text=Bank+Transfer" alt="Bank Transfer">
+                <p>Bank Transfer</p>
+            </div>
+        </div>
+
+        <button id="pay-btn"><a href="pay-success.html">Complete Payment</a></button>
+    </div>
+</main>
+
+<footer>
+    &copy; 2025 Contract Farming Platform. All rights reserved.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Profile</title>
+    <style>
+    .profile-search {
+    padding: 20px;
+}
+      .profile-search form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #F5F5F5;
+    border: 1px solid #ddd;
+}
+.profile-search input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+.profile-search button {
+    width: 30%;
+    padding: 10px;
+    background-color: #2E8B57; /* Agricultural green */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+ .profile-search button:hover {
+    background-color: #4CAF50; /* Darker green */
+}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .farmer-profile {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .profile-header {
+            background: #4CAF50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-header h1 {
+            margin: 0;
+        }
+
+        .view-requests-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #2E8B57;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .view-requests-btn:hover {
+            background-color: #45a049;
+        }
+
+        .profile-section {
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-picture img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .profile-details h2 {
+            margin-top: 0;
+            color: #2E8B57;
+        }
+
+        .profile-contracts ul,
+        .profile-settings ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .profile-contracts li {
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .chat-box {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .chat-message {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .profile-settings ul li a {
+            text-decoration: none;
+            color: #2E8B57;
+            font-size: large;
+            padding: 10px;
+            /* padding-bottom: 10px; */
+            transition: color 0.3s;
+        }
+
+        .profile-settings ul li a:hover {
+            color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <section class="farmer-profile">
+        <div class="profile-header">
+            <!-- <button class="view-requests-btn" onclick="location.href='View-Request1.html'">View</button> -->
+            <h1>Farmer Profile</h1>
+            <button class="view-requests-btn" onclick="location.href='received-request.html'">View Requests</button>
+        </div>
+        <div class="profile-section profile-info">
+            <div class="profile-picture">
+                <img src="../images/Farmer 3.jpg" alt="Farmer Picture">
+            </div>
+            <div class="profile-details">
+                <h2>Venkatesh</h2>
+                <p>Location: Ujire, Mangalore</p>
+                <p>Crop: Wheat</p>
+                <p>Acres: 25</p>
+                <!-- <p>Quantity: 1000 kg</p> -->
+            </div>
+        </div>
+        <div class="profile-section profile-contracts">
+            <h2>Recent Contracts</h2>
+            <ul>
+                <li>Contract 1:<br><br> Buyer - Gouri Ganesh Agencies,<br> Quantity - 500 kg,<br> Price - 68000</li>
+                <li>Contract 2:<br><br> Buyer - Basava Traders,<br> Quantity - 200 kg,<br> Price - 38500</li>
+            </ul>
+        </div>
+        <div class="profile-search">
+            <h2>Search for Buyer</h2>
+            <form>
+                <input type="text" placeholder="Search for buyer by name or location"   <a href=""><button>Search</button></a>
+                <!-- <a href=""><button>Search</button></a> -->
+                <!-- <button>Search</button> -->
+            </form>
+            <ul>
+                <h3>Examples</h3>
+                <li>Buyer 1: &nbsp;Guru Linga Traders, Location - Raichur, India</li>
+                <li>Buyer 2: &nbsp;Siddhlinga Traders, Location - Yadhgir, India</li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>

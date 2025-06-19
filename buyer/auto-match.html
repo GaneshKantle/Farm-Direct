@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer-Buyer Matching</title>
+    <style>
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 40px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .search-options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .search-options button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-options button:hover {
+            background-color: #45a049;
+        }
+
+        .search-options button a {
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-options button a:hover {
+            background-color: #45a049;
+        }
+
+        .farmer-list, .search-filters {
+            margin-top: 30px;
+        }
+
+        /* Farmer Card */
+        .farmer-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .farmer-card img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+        }
+
+        .farmer-details {
+            flex-grow: 1;
+            padding-left: 20px;
+        }
+
+        .farmer-details h3 {
+            margin: 0;
+        }
+
+        .farmer-details p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        /* Modal for Auto-Match */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            text-align: center;
+        }
+
+        .modal-content h2 {
+            color: #4CAF50;
+        }
+
+        .modal-content button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .modal-content button:hover {
+            background-color: #45a049;
+        }
+
+        /* Filters */
+        .search-filters select {
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Farmer-Buyer Matching</h1>
+
+    <div class="container">
+        <!-- Search Options -->
+        <div class="search-options">
+            <!-- <button id="manual-search">Manual Search</button> -->
+            <button><a href="landing.html">Home Page</a></button>
+            <button id="auto-search">Auto Search</button>
+        </div>
+
+        <!-- Farmer List (Manual Search) -->
+        <div class="farmer-list" id="farmer-list">
+            <div class="farmer-card">
+                <img src="../images/Farmer 1.jpg" alt="Farmer">
+                <div class="farmer-details">
+                    <h3>Farmer Name: Siddhappa</h3>
+                    <p>Location: Ujire</p>
+                    <p>Crop: Wheat</p>
+                </div>
+                <button>Select Farmer</button>
+            </div>
+            <div class="farmer-card">
+                <img src="../images/Farmer 7.jpg" alt="Farmer">
+                <div class="farmer-details">
+                    <h3>Farmer Name: Mallappa</h3>
+                    <p>Location: Saidapur</p>
+                    <p>Crop: Rice</p>
+                </div>
+                <button>Select Farmer</button>
+            </div>
+            <div class="farmer-card">
+                <img src="../images/Farmer 10.jpg" alt="Farmer">
+                <div class="farmer-details">
+                    <h3>Farmer Name: Earanna</h3>
+                    <p>Location: Yadgir</p>
+                    <p>Crop: Cotton</p>
+                </div>
+                <button>Select Farmer</button>
+            </div>
+            <div class="farmer-card">
+                <img src="../images/Farmer 8.jpg" alt="Farmer">
+                <div class="farmer-details">
+                    <h3>Farmer Name: Siddhlinga</h3>
+                    <p>Location: Bheemnalli</p>
+                    <p>Crop: Chilli</p>
+                </div>
+                <button>Select Farmer</button>
+            </div>
+            <div class="farmer-card">
+                <img src="../images/Farmer 2.jpg" alt="Farmer">
+                <div class="farmer-details">
+                    <h3>Farmer Name: Basappa</h3>
+                    <p>Location: Kundapura</p>
+                    <p>Crop: Sun Flower</p>
+                </div>
+                <button>Select Farmer</button>
+            </div>
+
+            <!-- Add more farmers similarly -->
+        </div>
+
+        <!-- Filters for Manual Search -->
+        <div class="search-filters" id="filters" style="display:none;">
+            <select id="crop-filter">
+                <option value="all">All Crops</option>
+                <option value="wheat">Wheat</option>
+                <option value="corn">Corn</option>
+                <option value="rice">Rice</option>
+            </select>
+
+            <select id="location-filter">
+                <option value="all">All Locations</option>
+                <option value="texas">Texas</option>
+                <option value="california">California</option>
+            </select>
+
+            <button id="filter-btn">Filter</button>
+        </div>
+    </div>
+
+    <!-- Modal for Auto Match -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2>Match Found!</h2>
+            <p>Farmer: Basappa | Location: Kundapura | Crop: Sun Flower</p>
+            <button id="close-modal">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Show modal on auto search
+        document.getElementById('auto-search').addEventListener('click', function() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'block';
+        });
+
+        // Close modal
+        document.getElementById('close-modal').addEventListener('click', function() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        });
+
+        // Manual search toggle and filtering
+        document.getElementById('manual-search').addEventListener('click', function() {
+            const filters = document.getElementById('filters');
+            filters.style.display = 'block';
+        });
+
+        // Filter functionality (Placeholder logic for filtering farmers)
+        document.getElementById('filter-btn').addEventListener('click', function() {
+            const crop = document.getElementById('crop-filter').value;
+            const location = document.getElementById('location-filter').value;
+
+            // Placeholder filtering logic
+            alert(`Filtering farmers by Crop: ${crop} and Location: ${location}`);
+        });
+    </script>
+
+</body>
+</html>

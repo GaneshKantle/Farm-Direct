@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmDirect - Farmer-Buyer Matching</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #f8f8f8;
+            padding: 20px;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+        .sidebar .active {
+            background-color: #77b544;
+            color: white;
+            border-radius: 5px;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .btn {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            color: white;
+            cursor: pointer;
+        }
+        .btn-accept {
+            background-color: #77b544;
+            color: white;
+        }
+        .btn-reject {
+            background-color: #ce1616;
+            color: #333;
+        }
+        footer {
+            background-color: #77b544;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- <div class="logo">FarmDirect</div> -->
+        <!-- <div>CodeCroppers@gmail.com</div> -->
+    </header>
+    <div class="container">
+  
+        <main class="main-content">
+            <h2>Requests from Buyers</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <!-- <th>Images</th> -->
+                        <th>Location</th>
+                        <th>Crop</th>
+                        <th>Quantity</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Basava Traders</td>
+                        <td>Sidhrampur</td>
+                        <td>Wheat</td>
+                        <td>12kg</td>
+                        <td>
+                            <button class="btn btn-accept">Accept</button>
+                            <button class="btn btn-reject">Reject</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Rural Community</td>
+                        <td>Mangalore</td>
+                        <td>Cotton</td>
+                        <td>10 tons</td>
+                        <td>
+                            <button class="btn btn-accept">Accept</button>
+                            <button class="btn btn-reject">Reject</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Rajeshwari Traders</td>
+                        <td>Raichur</td>
+                        <td>Chilly</td>
+                        <td>2 tons</td>
+                        <td>
+                            <button class="btn btn-accept">Accept</button>
+                            <button class="btn btn-reject">Reject</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Gouri Ganesh Agencies</td>
+                        <td>Saidapur</td>
+                        <td>Cotton</td>
+                        <td>23 tons</td>
+                        <td>
+                            <button class="btn btn-accept">Accept</button>
+                            <button class="btn btn-reject">Reject</button>
+                        </td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </main>
+    </div>
+    <footer>
+        Copyright 2025 FarmDirect
+    </footer>
+</body>
+</html>

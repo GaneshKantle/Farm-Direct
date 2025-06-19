@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer's Dashboard - Contract Farming</title>
+    <style>
+             .profile-card a button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        border-radius: 7px;
+        color: white;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+    }
+        h1{
+            text-align: center;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #F0FFF4;
+            color: #333;
+        }
+        nav {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        footer {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav ul {
+            text-decoration: none;
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav ul li a {
+            color: white;
+            /* padding: 20px; */
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Search & Filter Section */
+        .search-filter-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            background-color: #FFF;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .search-bar input {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .filter-system select {
+            padding: 10px;
+            margin-left: 15px;
+            font-size: 16px;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .search-bar button a{
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* Buyer Profiles Section */
+        .profiles-section {
+            padding: 20px;
+        }
+        .profile-card {
+            display: inline-block;
+            width: 250px;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #FFF;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .profile-card img {
+            width: 100%;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .profile-card h3 {
+            margin-top: 15px;
+            color: #4CAF50;
+            font-size: 22px;
+        }
+        .profile-card p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        /* Graph and Analysis Section */
+        .graph-section {
+            margin: 30px;
+        }
+        .graph-section img {
+            width: 100%;
+        }
+         /* Contract Page */
+         .contract-page {
+            background: #F0FFF4;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .contract-page h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        .contract-page textarea {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .contract-page button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 25px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+        }
+        /* Footer */
+        footer p {
+            margin: 0;
+        }
+
+                /* Chatbot */
+                .chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Voice Call Button */
+        .voice-call {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background: #FFD700;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h1>BUYER PAGE</h1>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="#top-rated">Top Rated</a></li>
+            <li><a href="#contract-section">Contract Agreement</a></li>
+            <li><a href="auto-match.html">Profile Matching</a></li>
+            <li><a href="payment.html">Payment</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <!-- Search and Filter Section -->
+    <section class="search-filter-section" id="search">
+        <div class="search-bar">
+            <input type="text" placeholder="Search for farmers...">
+            <button>Search</button>
+            <a href="auto-match.html"><button>Profile Match</button></a>
+            <!-- <button><a href="Matching.html">Profile Match</a></button> -->
+        </div>
+        <div class="filter-system">
+            <select>
+                <option>Farmer Region</option>
+                <option>North</option>
+                <option>South</option>
+                <option>East</option>
+                <option>West</option>
+            </select>
+            <select>
+                <option>Product Type</option>
+                <option>Vegetables</option>
+                <option>Fruits</option>
+                <option>Grains</option>
+            </select>
+            <select>
+                <option>Ratings</option>
+                <option>4.0 and above</option>
+                <option>3.0 - 4.0</option>
+                <option>2.0 - 3.0</option>
+            </select>
+        </div>
+    </section>
+x
+    <!-- Buyer Profiles Section -->
+    <section class="profiles-section" id="recently-viewed">
+        <h2>Recently Viewed Farmers</h2>
+        <div class="profile-card">
+            <img src="../images/Farmer 9.jpg" alt="Farmer 1">
+            <h3>Ramayya</h3>
+            <p>Region: North</p>
+            <p>Product: Fruits</p>
+            <a href="send-request.html"><button>Request</button></a>
+        </div>
+        <div class="profile-card">
+            <img src="../images/Farmer 4.jpg" alt="Farmer 1">
+            <h3>Guru</h3>
+            <p>Region: North</p>
+            <p>Product: Cotton</p>
+            <a href="send-request.html"><button>Request</button></a>
+        </div>
+        <!-- Add more profiles -->
+    </section>
+
+    <section class="profiles-section" id="top-rated">
+        <h2>Top Rated Farmers</h2>
+        <div class="profile-card">
+            <img src="../images/Farmer 3.jpg" alt="Buyer 2">
+            <h3>Kumara</h3>
+            <p>Region: South</p>
+            <p>Product: Grains</p>
+            <a href="send-request.html"><button>Request</button></a>
+        </div>
+
+            <div class="profile-card">
+                <img src="../images/Farmer 1.jpg" alt="Buyer 2">
+                <h3>Dhanu</h3>
+                <p>Region: South</p>
+                <p>Product: Grains</p>
+                <a href="send-request.html"><button>Request</button></a>
+            </div>
+        <!-- Add more profiles -->
+    </section>
+
+    <section class="profiles-section" id="recommendations">
+        <h2>Recommended Farmers</h2>
+        <div class="profile-card">
+            <img src="../images/Farmer 10.jpg" alt="Buyer 3">
+            <h3>Basappa</h3>
+            <p>Region: East</p>
+            <p>Product: Vegetables</p>
+            <a href="send-request.html"><button>Request</button></a>
+        </div>
+        <div class="profile-card">
+            <img src="../images/Farmer 6.jpg" alt="Buyer 3">
+            <h3>Siddhlinga</h3>
+            <p>Region: East</p>
+            <p>Product: Vegetables</p>
+            <a href="send-request.html"><button>Request</button></a>
+        </div>
+        <div class="profile-card">
+            <img src="../images/Farmer 7.jpg" alt="Buyer 3">
+            <h3>Earanna</h3>
+            <p>Region: East</p>
+            <p>Product: Vegetables</p>
+            <a href="send-request.html"><button>Request</button></a>
+        </div>
+        <!-- Add more profiles -->
+    </section>
+
+    <section id="contract-section" class="section contract-page">
+        <h3>Create Your Contract Agreement</h3>
+        <textarea placeholder="Enter contract details..."></textarea>
+        <a href="contract-conditions.html"><button>Create Contract Conditions</button></a>
+    </section>
+
+    <div class="chatbot">💬</div>
+
+    <!-- Voice Call -->
+    <div class="voice-call">📞</div>
+
+
+    <!-- Graph and Analysis Section -->
+    <section class="graph-section">
+        <h2>Market Trends and Analysis</h2>
+            <canvas id="marketTrendsGraph"></canvas>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('marketTrendsGraph').getContext('2d');
+        const marketTrendsGraph = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Crop Yield (in tons)',
+                    data: [30, 40, 35, 50, 60, 55, 70, 65, 80, 90, 100, 95],
+                    backgroundColor: 'rgba(76, 175, 80, 0.2)',
+                    borderColor: '#4CAF50',
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Contract Farming System. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Request by Buyer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h3 {
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bolder;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        button {
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+        .popup-content {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+        .popup-content h2 {
+            color: #4CAF50;
+            margin-top: 0;
+        }
+        .popup-content p {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .close-popup {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .popup-icon {
+            font-size: 48px;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Order Request by Buyer to Farmer</h3>
+    <table>
+        <tr>
+            <th>Sl No.</th>
+            <th>Crop</th>
+            <th>Required Yield</th>
+            <th>Time</th>
+            <th>Crop Required</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Cotton</td>
+            <td>50 tons</td>
+            <td>6 months</td>
+            <td>Dec 2024</td>
+        </tr>
+    </table>
+    <div class="button-container">
+        <button id="sendRequestBtn">Send Request to Farmer </button>
+        <a href="agreement.html"><button id="viewAgreementBtn">View Agreement</button></a>
+    </div>
+
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <div class="popup-icon">🌾</div>
+            <h2>Request Sent!</h2>
+            <p>Your order request has been successfully submitted.</p>
+            <button class="close-popup">Close</button>
+        </div>
+    </div>
+
+    <script>
+        const sendRequestBtn = document.getElementById('sendRequestBtn');
+        const popup = document.getElementById('popup');
+        const closePopupBtn = document.querySelector('.close-popup');
+
+        sendRequestBtn.addEventListener('click', () => {
+            popup.style.display = 'block';
+        });
+
+        closePopupBtn.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+
+        // Close popup when clicking outside of it
+        window.addEventListener('click', (event) => {
+            if (event.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
